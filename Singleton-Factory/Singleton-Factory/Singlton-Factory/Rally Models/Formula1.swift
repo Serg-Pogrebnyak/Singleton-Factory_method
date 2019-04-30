@@ -15,5 +15,9 @@ struct Formula1: RallyProtocol {
     
     func start() {
         print("Start formula 1")
+        let randomTime:TimeInterval = TimeInterval(UInt64.random(in: 0 ... 10))
+        DispatchQueue.global().asyncAfter(deadline: .now() + randomTime) {
+            print("🏁 formula 1 finish!")
+        }
     }
 }

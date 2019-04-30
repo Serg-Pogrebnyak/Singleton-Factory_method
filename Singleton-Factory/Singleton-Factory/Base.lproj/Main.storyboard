@@ -21,19 +21,37 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grr-GK-MWp">
                                 <rect key="frame" x="160.5" y="50" width="54" height="30"/>
                                 <state key="normal" title="Add car"/>
+                                <connections>
+                                    <action selector="addMember:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CED-yb-opc"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZP-gD-tmw">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ZP-gD-tmw">
                                 <rect key="frame" x="142.5" y="110" width="90" height="30"/>
                                 <state key="normal" title="Add formula1"/>
+                                <connections>
+                                    <action selector="addMember:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K4i-Oh-seA"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsX-vV-CZS">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsX-vV-CZS">
                                 <rect key="frame" x="133.5" y="160" width="108" height="30"/>
                                 <state key="normal" title="Add 11-marshut"/>
+                                <connections>
+                                    <action selector="addMember:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JgL-Bx-Cqu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9G-lU-hxq">
+                                <rect key="frame" x="170.5" y="240" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startRally:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xjx-0f-f3J"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5ZP-gD-tmw" firstAttribute="top" secondItem="grr-GK-MWp" secondAttribute="bottom" constant="30" id="BYO-Wy-ZCk"/>
+                            <constraint firstItem="m9G-lU-hxq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OZJ-sl-HV1"/>
+                            <constraint firstItem="m9G-lU-hxq" firstAttribute="top" secondItem="gsX-vV-CZS" secondAttribute="bottom" constant="50" id="R4F-G9-FOb"/>
                             <constraint firstItem="grr-GK-MWp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vdq-HT-afJ"/>
                             <constraint firstItem="gsX-vV-CZS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cZE-s2-mCq"/>
                             <constraint firstItem="5ZP-gD-tmw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iLt-VU-Ub5"/>

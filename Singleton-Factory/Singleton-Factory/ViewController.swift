@@ -14,14 +14,27 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addMember()
+    }
+
+    @IBAction func addMember(_ sender: UIButton) {
+        switch sender.tag {
+        case 0:
+            rallyMember.append(RallyFabric.shared.createRallyVehicle(type: .car))
+        case 1:
+            rallyMember.append(RallyFabric.shared.createRallyVehicle(type: .formula1))
+        case 2:
+            rallyMember.append(RallyFabric.shared.createRallyVehicle(type: .marshut))
+        default:
+            fatalError()
+        }
+    }
+    
+    @IBAction func startRally(_ sender: Any) {
         for i in rallyMember {
             i.start()
         }
-    }
-
-    func addMember() {
-        rallyMember.append(RallyFabric.shared.createRallyVehicle(type: .car))
+        print("🥳🥳🥳🥳🥳All member start🥳🥳🥳🥳🥳")
+        rallyMember.removeAll()
     }
 }
 

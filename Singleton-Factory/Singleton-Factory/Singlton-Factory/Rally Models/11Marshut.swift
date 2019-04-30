@@ -15,5 +15,9 @@ struct Marshut: RallyProtocol {
     
     func start() {
         print("Start 11 marshut")
+        let randomTime:TimeInterval = TimeInterval(UInt64.random(in: 0 ... 10))
+        DispatchQueue.global().asyncAfter(deadline: .now() + randomTime) {
+            print("🏁 11 marshut finish!")
+        }
     }
 }
