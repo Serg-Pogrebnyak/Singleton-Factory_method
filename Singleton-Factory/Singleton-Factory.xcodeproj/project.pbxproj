@@ -17,6 +17,7 @@
 		0BF81E742278A26C00C543D7 /* Formula1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF81E732278A26C00C543D7 /* Formula1.swift */; };
 		0BF81E762278A2E500C543D7 /* 11Marshut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF81E752278A2E500C543D7 /* 11Marshut.swift */; };
 		0BF81E7A2278A3B400C543D7 /* RallyFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF81E792278A3B400C543D7 /* RallyFabric.swift */; };
+		7DEDFF0F7B3C5D567E8D1045 /* libPods-Singleton-Factory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A77C8E50348F4006DED7D79 /* libPods-Singleton-Factory.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,9 @@
 		0BF81E732278A26C00C543D7 /* Formula1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula1.swift; sourceTree = "<group>"; };
 		0BF81E752278A2E500C543D7 /* 11Marshut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 11Marshut.swift; sourceTree = "<group>"; };
 		0BF81E792278A3B400C543D7 /* RallyFabric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RallyFabric.swift; sourceTree = "<group>"; };
+		78E9576252C962185F188056 /* Pods-Singleton-Factory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Singleton-Factory.debug.xcconfig"; path = "Target Support Files/Pods-Singleton-Factory/Pods-Singleton-Factory.debug.xcconfig"; sourceTree = "<group>"; };
+		7A77C8E50348F4006DED7D79 /* libPods-Singleton-Factory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Singleton-Factory.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3F29B88BBF2F7F87D092446 /* Pods-Singleton-Factory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Singleton-Factory.release.xcconfig"; path = "Target Support Files/Pods-Singleton-Factory/Pods-Singleton-Factory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DEDFF0F7B3C5D567E8D1045 /* libPods-Singleton-Factory.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0778F0C24D149349862D8E01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78E9576252C962185F188056 /* Pods-Singleton-Factory.debug.xcconfig */,
+				E3F29B88BBF2F7F87D092446 /* Pods-Singleton-Factory.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		0BF81E5122789FCC00C543D7 = {
 			isa = PBXGroup;
 			children = (
 				0BF81E5C22789FCC00C543D7 /* Singleton-Factory */,
 				0BF81E5B22789FCC00C543D7 /* Products */,
+				0778F0C24D149349862D8E01 /* Pods */,
+				8183114C9879E6FF71C5B960 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +111,14 @@
 			path = "Rally Models";
 			sourceTree = "<group>";
 		};
+		8183114C9879E6FF71C5B960 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A77C8E50348F4006DED7D79 /* libPods-Singleton-Factory.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BF81E6C22789FCE00C543D7 /* Build configuration list for PBXNativeTarget "Singleton-Factory" */;
 			buildPhases = (
+				44635EEBBCB629FF07B61CE8 /* [CP] Check Pods Manifest.lock */,
 				0BF81E5622789FCC00C543D7 /* Sources */,
 				0BF81E5722789FCC00C543D7 /* Frameworks */,
 				0BF81E5822789FCC00C543D7 /* Resources */,
+				0B043F5D2278D16100C65B51 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -160,6 +186,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B043F5D2278D16100C65B51 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "REVEAL_APP_PATH=$(mdfind kMDItemCFBundleIdentifier=\"com.ittybittyapps.Reveal2\" | head -n 1)\nBUILD_SCRIPT_PATH=\"${REVEAL_APP_PATH}/Contents/SharedSupport/Scripts/reveal_server_build_phase.sh\"\nif [ \"${REVEAL_APP_PATH}\" -a -e \"${BUILD_SCRIPT_PATH}\" ]; then\n\"${BUILD_SCRIPT_PATH}\"\nelse\necho \"Reveal Server not loaded: Cannot find a compatible Reveal app.\"\nfi\n";
+		};
+		44635EEBBCB629FF07B61CE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Singleton-Factory-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0BF81E5622789FCC00C543D7 /* Sources */ = {
@@ -316,11 +384,13 @@
 		};
 		0BF81E6D22789FCE00C543D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78E9576252C962185F188056 /* Pods-Singleton-Factory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9B6M85MQ7J;
 				INFOPLIST_FILE = "Singleton-Factory/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,11 +404,13 @@
 		};
 		0BF81E6E22789FCE00C543D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3F29B88BBF2F7F87D092446 /* Pods-Singleton-Factory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9B6M85MQ7J;
 				INFOPLIST_FILE = "Singleton-Factory/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
